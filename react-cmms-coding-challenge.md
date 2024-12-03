@@ -1,15 +1,18 @@
 # React Coding Challenge
 
 ## Overview
+
 Create a simple maintenance tracking system that allows technicians to log maintenance activities on equipment and visualize basic maintenance metrics.
 
 ## Time Frame and Submission
+
 - Submit as a public GitHub repository
 - Use clear, descriptive commit messages throughout development
 
 ## Phase 1 (Required)
 
 ### Technical Requirements
+
 - Next.js with TypeScript
 - Tailwind CSS for styling
 - Tanstack Table
@@ -20,39 +23,43 @@ Create a simple maintenance tracking system that allows technicians to log maint
 ### Core Features
 
 #### 1. Equipment Management
+
 ```typescript
 interface Equipment {
   id: string;
   name: string;
   location: string;
-  department: 'Machining' | 'Assembly' | 'Packaging' | 'Shipping';
+  department: "Machining" | "Assembly" | "Packaging" | "Shipping";
   model: string;
   serialNumber: string;
   installDate: Date;
-  status: 'Operational' | 'Down' | 'Maintenance' | 'Retired';
+  status: "Operational" | "Down" | "Maintenance" | "Retired";
 }
 ```
 
 #### 2. Maintenance Records
+
 ```typescript
 interface MaintenanceRecord {
   id: string;
   equipmentId: string;
   date: Date;
-  type: 'Preventive' | 'Repair' | 'Emergency';
+  type: "Preventive" | "Repair" | "Emergency";
   technician: string;
   hoursSpent: number;
   description: string;
   partsReplaced?: string[];
-  priority: 'Low' | 'Medium' | 'High';
-  completionStatus: 'Complete' | 'Incomplete' | 'Pending Parts';
+  priority: "Low" | "Medium" | "High";
+  completionStatus: "Complete" | "Incomplete" | "Pending Parts";
 }
 ```
 
 #### 3. Required Features
 
 ##### Equipment Form
+
 Create a form with Zod validation:
+
 - Name (required, min 3 chars)
 - Location (required)
 - Department (dropdown from enum)
@@ -62,7 +69,9 @@ Create a form with Zod validation:
 - Status (dropdown from enum)
 
 ##### Maintenance Record Form
+
 Create a form with Zod validation:
+
 - Equipment (dropdown selection, required)
 - Date (required, not future date)
 - Type (dropdown from enum)
@@ -74,24 +83,29 @@ Create a form with Zod validation:
 - Completion Status (dropdown from enum)
 
 ##### Equipment Table
+
 - Display all equipment with columns for all fields
 - Implement sorting and filtering
 - Add status-based row coloring
 - Enable bulk status updates
 
 ##### Maintenance Records Table
+
 - Show all maintenance records
 - Include equipment name (joined from equipment data)
 - Implement sorting and filtering
 - Group by equipment option
 
 ##### Dashboard
+
 Create a simple dashboard with:
+
 - Equipment status breakdown (pie chart)
 - Maintenance hours by department (bar chart)
 - Recent maintenance activities
 
 #### 4. Required Tests
+
 Implement the following E2E tests using Playwright:
 
 ```typescript
@@ -111,13 +125,16 @@ Implement the following E2E tests using Playwright:
 ## Phase 2 (Extra Credit)
 
 ### Database Integration
+
 - Set up a simple SQL database with two tables
 - Implement Prisma schema
 - Create basic CRUD endpoints
 - Include proper relationships
 
 ### Reporting
+
 Add ability to:
+
 - Generate a PDF maintenance report for selected equipment
 - Include maintenance history
 - Show total maintenance hours
@@ -126,29 +143,36 @@ Add ability to:
 ## Submission Requirements
 
 ### Documentation
+
 README.md must include:
+
 1. Setup Instructions
+
    - Prerequisites
    - Installation steps
    - How to run the application
    - How to run tests
 
 2. Features Implementation
+
    - List of completed features
    - Screenshots of key features (optional)
    - API endpoints (if Phase 2 completed)
 
 3. Testing Approach
+
    - Testing strategy
    - What is tested and why
    - How to run different types of tests
 
 4. Technical Decisions
+
    - Key libraries used and why
    - Architecture decisions
    - State management approach
 
 5. Known Issues/Limitations
+
    - Current bugs or limitations
    - Future improvements
 
@@ -157,6 +181,7 @@ README.md must include:
    - How to use them
 
 ## Tips for Success
+
 - ✅ Complete required features before attempting bonus features
 - ✅ Write clear, maintainable tests
 - ✅ Use TypeScript effectively
@@ -170,6 +195,7 @@ README.md must include:
 ## Evaluation Criteria
 
 ### Code Quality (40%)
+
 - TypeScript usage
 - Code organization
 - Error handling
@@ -177,18 +203,21 @@ README.md must include:
 - Form validation
 
 ### Functionality (30%)
+
 - Feature completeness
 - Data management
 - Search/filter implementation
 - Chart functionality
 
 ### Testing (20%)
+
 - Test coverage
 - Test organization
 - Test reliability
 - Error cases covered
 
 ### Documentation (10%)
+
 - README clarity
 - Code comments
 - Commit messages
