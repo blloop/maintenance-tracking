@@ -19,13 +19,13 @@ I haven't created a design yet, but have some ideas on what the final app will l
 
 The route layout, to be defined using Next's app router (folder nesting with `page.js`)
 
-| Route              | Component        | Description                                            |
-| ------------------ | ---------------- | ------------------------------------------------------ |
-| `/`                | Dashboard        | Overview of maintenance metrics and recent activities. |
-| `/equipment`       | EquipmentTbale   | Lists all equipment in table format.                   |
-| `/equipment/new`   | EquipmentForm    | Form to add a new equipment.                           |
-| `/maintenance`     | MaintenanceTable | Lists all maintenance records in table format.         |
-| `/maintenance/new` | MaintenanceForm  | Form to create a new maintenance record.               |
+| Route            | Component      | Description                                            |
+| ---------------- | -------------- | ------------------------------------------------------ |
+| `/`              | Dashboard      | Overview of maintenance metrics and recent activities. |
+| `/equipment`     | EquipmentTbale | Lists all equipment in table format.                   |
+| `/equipment/new` | EquipmentForm  | Form to add a new equipment.                           |
+| `/record`        | RecordTable    | Lists all maintenance records in table format.         |
+| `/record/new`    | RecordForm     | Form to create a new maintenance record.               |
 
 _Note: Editing is mentioned as a feature in the testing portion of the spec, so an edit route may be needed._
 
