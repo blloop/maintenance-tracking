@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -29,18 +28,17 @@ import { Calendar } from "./ui/calendar";
 import { format } from "date-fns";
 
 const departments = [
-  "Engineering",
-  "Production",
-  "Maintenance",
-  "Quality Control",
-  "Logistics",
+  "Machining",
+  "Assembly",
+  "Packaging",
+  "Shipping"
 ] as const;
 
 const statuses = [
   "Operational",
-  "Under Maintenance",
-  "Out of Service",
-  "Pending Installation",
+  "Down",
+  "Maintenance",
+  "Retired",
 ] as const;
 
 export function EquipmentForm() {
@@ -66,7 +64,7 @@ export function EquipmentForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="name"
@@ -74,11 +72,8 @@ export function EquipmentForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Enter equipment name" {...field} />
+                <Input placeholder="Enter equipment name (min. 3 characters)" {...field} />
               </FormControl>
-              <FormDescription>
-                The name of the equipment (minimum 3 characters).
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -92,9 +87,6 @@ export function EquipmentForm() {
               <FormControl>
                 <Input placeholder="Enter equipment location" {...field} />
               </FormControl>
-              <FormDescription>
-                The location where the equipment is installed.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -119,9 +111,6 @@ export function EquipmentForm() {
                   ))}
                 </SelectContent>
               </Select>
-              <FormDescription>
-                The department responsible for this equipment.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -135,9 +124,6 @@ export function EquipmentForm() {
               <FormControl>
                 <Input placeholder="Enter equipment model" {...field} />
               </FormControl>
-              <FormDescription>
-                The model name of the equipment.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -149,11 +135,8 @@ export function EquipmentForm() {
             <FormItem>
               <FormLabel>Serial Number</FormLabel>
               <FormControl>
-                <Input placeholder="Enter serial number" {...field} />
+                <Input placeholder="Enter serial number (alphanumeric)" {...field} />
               </FormControl>
-              <FormDescription>
-                The serial number of the equipment (alphanumeric).
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -195,9 +178,6 @@ export function EquipmentForm() {
                   />
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                The date when the equipment was installed.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -222,9 +202,6 @@ export function EquipmentForm() {
                   ))}
                 </SelectContent>
               </Select>
-              <FormDescription>
-                The current operational status of the equipment.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
