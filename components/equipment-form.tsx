@@ -47,11 +47,11 @@ export function EquipmentForm() {
     defaultValues: {
       name: "",
       location: "",
-      department: "Machining",
+      department: departments[0],
       model: "",
       serialNumber: "",
       installDate: new Date(),
-      status: "Operational",
+      status: statuses[0],
     },
   });
 

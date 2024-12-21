@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const RecordSchema = z.object({
-  equipment: z.string().min(1, "Equipment ID is required"), // TODO: Will use dropdown to ensure field exists
+  equipment: z.string().min(1, "Equipment ID is required"),
   date: z
     .date()
     .refine((date: Date) => date <= new Date(), "Date cannot be in the future"),
@@ -11,7 +11,7 @@ export const RecordSchema = z.object({
     .min(2, "Technician name must be at least 2 characters long"),
   hoursSpent: z
     .number()
-    .positive("Hours Spent must be positive")
+    .positive("Hours spent must be positive")
     .max(24, "Cannot exceed 24 hours"),
   description: z
     .string()

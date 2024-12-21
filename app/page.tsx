@@ -21,7 +21,7 @@ export default function Dashboard() {
             Add Equipment
           </Link>
           <Link
-            href="/maintenance/new"
+            href="/record/new"
             className="flex items-center text-white text-sm px-4 py-2 rounded-md bg-gray-900 hover:bg-gray-700 transition-colors"
           >
             <Plus className="mr-2 h-4 w-4" />
