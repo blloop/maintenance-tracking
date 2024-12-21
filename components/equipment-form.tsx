@@ -27,19 +27,9 @@ import { cn } from "@/lib/utils";
 import { Calendar } from "./ui/calendar";
 import { format } from "date-fns";
 
-const departments = [
-  "Machining",
-  "Assembly",
-  "Packaging",
-  "Shipping"
-] as const;
+const departments = ["Machining", "Assembly", "Packaging", "Shipping"] as const;
 
-const statuses = [
-  "Operational",
-  "Down",
-  "Maintenance",
-  "Retired",
-] as const;
+const statuses = ["Operational", "Down", "Maintenance", "Retired"] as const;
 
 export function EquipmentForm() {
   const form = useForm<EquipmentFormValues>({
@@ -72,7 +62,10 @@ export function EquipmentForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Enter equipment name (min. 3 characters)" {...field} />
+                <Input
+                  placeholder="Enter equipment name (min. 3 characters)"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -135,7 +128,10 @@ export function EquipmentForm() {
             <FormItem>
               <FormLabel>Serial Number</FormLabel>
               <FormControl>
-                <Input placeholder="Enter serial number (alphanumeric)" {...field} />
+                <Input
+                  placeholder="Enter serial number (alphanumeric)"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

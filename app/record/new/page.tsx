@@ -6,5 +6,5 @@ export default function Page() {
       <h2 className="text-3xl font-bold text-gray-700">Add New Record</h2>
       <RecordForm />
     </main>
-  )
+  );
 }

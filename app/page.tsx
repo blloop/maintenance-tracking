@@ -64,9 +64,7 @@ export default function Dashboard() {
             >
               <div className="flex items-center gap-4">
                 {e.logo}
-                <h3 className="tracking-tight text-sm font-medium">
-                  {e.text}
-                </h3>
+                <h3 className="tracking-tight text-sm font-medium">{e.text}</h3>
               </div>
               <div className={e.isBold ? "text-2xl font-bold" : "text-lg"}>
                 {e.value}
@@ -108,9 +106,7 @@ export default function Dashboard() {
             >
               <div className="flex items-center gap-4">
                 {e.logo}
-                <h3 className="tracking-tight text-sm font-medium">
-                  {e.text}
-                </h3>
+                <h3 className="tracking-tight text-sm font-medium">{e.text}</h3>
               </div>
               <div className={e.isBold ? "text-2xl font-bold" : "text-lg"}>
                 {e.value}

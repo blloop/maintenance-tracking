@@ -27,22 +27,11 @@ import { cn } from "@/lib/utils";
 import { Calendar } from "./ui/calendar";
 import { format } from "date-fns";
 
-const types = [
-  "Preventive",
-  "Repair",
-  "Emergency"
-] as const;
+const types = ["Preventive", "Repair", "Emergency"] as const;
 
-const priorities = [
-  "Low",
-  "Medium",
-  "High"
-] as const;
+const priorities = ["Low", "Medium", "High"] as const;
 
-const statuses = ["Complete",
-  "Incomplete",
-  "Pending Parts"
-] as const;
+const statuses = ["Complete", "Incomplete", "Pending Parts"] as const;
 
 export function RecordForm() {
   const form = useForm<RecordFormValues>({
@@ -182,7 +171,10 @@ export function RecordForm() {
             <FormItem>
               <FormLabel>Description</FormLabel>
               <FormControl>
-                <Input placeholder="Enter record description (min. 10 characters)" {...field} />
+                <Input
+                  placeholder="Enter record description (min. 10 characters)"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
